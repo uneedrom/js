@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Практическая работа 3</title>
+    </head>
+    <body>
+
+        <div class="task">
+            <button onclick="task1()">Запустить задачу 1</button>
+        </div>
+
+        <div class="task">
+            <button onclick="task2()">Запустить задачу 2</button>
+        </div>
+
+        <div class="task">
+            <button onclick="task3()">Запустить задачу 3</button>
+        </div>
+
+        <div class="task">
+            <button onclick="task4()">Запустить задачу 4</button>
+        </div>
+
+        <div class="task">
+            <button onclick="task5()">Запустить задачу 5</button>
+        </div>
+
+        <script>
+        // 1
+        function task1() {
+            const price = parseInt(prompt('Введите стоимость товара:'));
+            const money = parseInt(prompt('Введите количество денег клиента:'));
+
+            if (isNaN(price) || isNaN(money) || price < 0 || money < 0) {
+                alert('Неверный формат ввода');
+                return;
+            }
+
+            if (price == money) {
+                alert('Покупка совершена');
+            } else if (price > money) {
+                alert(`Для покупки не хватает ${price - money} р.`);
+            } else {
+                alert(`Покупка совершена. Сдача ${money - price} р.`);
+            }
+        }
+
+        // 2
+        function task2() {
+            const number = prompt('Введите число:');
+            if (number > 0) {
+                alert('1');
+            } else if (number < 0) {
+                alert('-1');
+            } else {
+                alert('0');
+            }
+        }
+
+        // 3
+        function task3() {
+            const a = prompt('a');
+            const b = prompt('b');
+            const result = (a + b < 4) ? 'Мало' : 'Много';
+            alert(result);
+        }
+
+        // 4
+        function task4() {
+            const login = prompt('login').toLowerCase();
+            const message = (login == 'сотрудник') ? 'Привет' : 
+                                (login == 'директор') ? 'Здравствуйте' : 
+                                    (login == '') ? 'Нет логина' : '';
+            alert(message);
+        }
+
+        // 5
+        function task5() {
+            const login = prompt('Введите логин:');
+            
+            if (!login) {
+                alert('Отменено');
+                return;
+            }
+
+            if (login == 'Админ') {
+                const password = prompt('Введите пароль:');
+                
+                if (!password) {
+                    alert('Отменено');
+                    return;
+                }
+
+                if (password == 'Я главный') {
+                    alert('Здравствуйте!');
+                } else {
+                    alert('Неверный пароль');
+                }
+            } else {
+                alert('Я вас не знаю');
+            }
+        }
+    </script>
+    </body>
+</html>
