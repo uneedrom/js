@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Практическая работа 4</title>
+    </head>
+    <body>
+        <h1>Практическая работа 4</h1>
+
+        <div class="task">
+            <h2>Задача 1</h2>
+            <button onclick="task1()">Выполнить</button>
+        </div>
+
+        <div class="task">
+            <h2>Задача 2</h2>
+            <button onclick="task2()">Выполнить</button>
+        </div>
+
+        <div class="task">
+            <h2>Задача 3</h2>
+            <button onclick="task3()">Выполнить</button>
+        </div>
+
+        <div class="task">
+            <h2>Задача 4</h2>
+            <button onclick="task4()">Выполнить</button>
+        </div>
+
+        <div class="task">
+            <h2>Задача 5</h2>
+            <button onclick="task5()">Выполнить</button>
+        </div>
+
+        <div class="task">
+            <h2>Задача 6</h2>
+            <button onclick="task6()">Выполнить</button>
+        </div>
+
+        <script>
+        // 1
+        function task1() {
+            const a = parseInt(prompt('Введите число a:', ''));
+            const b = parseInt(prompt('Введите число b:', ''));
+            let result = '';
+            
+            for (let i = a; i <= b; i++) {
+                if (i % 2 === 0) {
+                    result += i + ' ';
+                }
+            }
+            alert(result);
+            
+        }
+
+        // 2
+        function task2() {
+            let i = 0;
+            
+            while (i < 3) {
+                alert(`number ${i}!`);
+                i++;
+            }
+        }
+
+        // 3
+        function task3() {
+            let num;
+            let result = '';
+            
+            do {
+                num = prompt('Введите число больше 10:', '');
+                if (num === null) {
+                    result = 'отменен';
+                    break;
+                }
+                num = parseInt(num);
+                if (num > 10) {
+                    result = `Введено число ${num}`;
+                    break;
+                }
+            } while (true);
+            
+           alert(result);
+        }
+
+        // 4
+        function task4() {
+            const a = parseInt(prompt('первое число:', ''));
+            const b = parseInt(prompt('второе число:', ''));
+            alert(a < b ? a : b);
+        }
+
+        // 5
+        const ask = (question, yes, no) => confirm(question) ? yes() : no();
+
+        function task5() {
+            ask(
+                "Вы согласны?",
+                () => alert("Вы согласились."),
+                () => alert("Вы отменили выполнение.")
+            );
+        }
+
+        // 5
+        const checkAge = age => age >= 18 || confirm('Родители разрешили?');
+
+        function task6() {
+            const age = parseInt(prompt('возраст:', ''));
+            const result = checkAge(age);
+            alert(result ? 'Доступ разрешен' : 'Доступ запрещен');
+        }
+    </script>
+    </body>
+</html>
