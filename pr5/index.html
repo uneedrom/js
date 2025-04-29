@@ -16,37 +16,37 @@
         <h1>Практическая работа 5</h1>
 
         <div class="task">
-            <h2>Задача 1: Суммирование зарплат</h2>
+            <h2>Задача 1</h2>
             <button onclick="task1()">Выполнить</button>
         </div>
 
         <div class="task">
-            <h2>Задача 2: Умножение числовых свойств</h2>
+            <h2>Задача 2</h2>
             <button onclick="task2()">Выполнить</button>
         </div>
 
         <div class="task">
-            <h2>Задача 3: Калькулятор</h2>
+            <h2>Задача 3</h2>
             <button onclick="task3()">Выполнить</button>
         </div>
 
         <div class="task">
-            <h2>Задача 4: Извлечение числа из строки</h2>
+            <h2>Задача 4</h2>
             <button onclick="task4()">Выполнить</button>
         </div>
 
         <div class="task">
-            <h2>Задача 5: Преобразование в массив имён</h2>
+            <h2>Задача 5</h2>
             <button onclick="task5()">Выполнить</button>
         </div>
 
         <div class="task">
-            <h2>Задача 6: Средний возраст</h2>
+            <h2>Задача 6</h2>
             <button onclick="task6()">Выполнить</button>
         </div>
 
         <script>
-        // Задача 1: Суммирование зарплат
+        // 1
         function task1() {
             let salaries = {
                 John: 100,
@@ -62,13 +62,15 @@
             alert(`Сумма зарплат: ${sum}`);
         }
 
-        // Задача 2: Умножение числовых свойств
+        // 2
         function task2() {
             let menu = {
                 width: 200,
                 height: 300,
                 title: "My menu"
             };
+
+            multiplyNumeric(menu);
             
             function multiplyNumeric(obj) {
                 for (let key in obj) {
@@ -78,14 +80,14 @@
                 }
             }
             
-            let beforeStr = JSON.stringify(menu, null, 2);
-            multiplyNumeric(menu);
-            let afterStr = JSON.stringify(menu, null, 2);
-            
-            alert(`До:\n${beforeStr}\n\nПосле:\n${afterStr}`);
+            let result = "";
+            for (let key in menu) {
+                result += key + ": " + menu[key] + "\n";
+            }
+            alert(result);
         }
 
-        // Задача 3: Калькулятор
+        // 3
         function task3() {
             let calculator = {
                 read() {
@@ -105,7 +107,7 @@
             alert(`Произведение: ${calculator.mul()}`);
         }
 
-        // Задача 4: Извлечение числа из строки
+        // 4
         function task4() {
             function extractCurrencyValue(str) {
                 return parseInt(str.slice(1));
@@ -117,7 +119,7 @@
             alert(`Из строки "${value}" извлечено число: ${result}`);
         }
 
-        // Задача 5: Преобразование в массив имён
+        // 5
         function task5() {
             let vasya = { name: "Вася", age: 25 };
             let petya = { name: "Петя", age: 30 };
