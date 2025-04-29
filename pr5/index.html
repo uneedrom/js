@@ -141,13 +141,11 @@
             let users = [ vasya, petya, masha ];
             
             function getAverageAge(users) {
-                // Просто суммируем все возрасты в цикле
                 let sum = 0;
                 for (let i = 0; i < users.length; i++) {
                     sum = sum + users[i].age;
                 }
                 
-                // Делим на количество пользователей
                 let average = sum / users.length;
                 return average;
             }
