@@ -104,7 +104,7 @@
         }
 
         // 5
-        const checkAge = age => age >= 18 || confirm('Родители разрешили?');
+        const checkAge = age => age >= 18 ? true : confirm('Родители разрешили?');
 
         function task6() {
             const age = parseInt(prompt('возраст:', ''));
