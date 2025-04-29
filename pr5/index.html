@@ -141,36 +141,20 @@
             let users = [ vasya, petya, masha ];
             
             function getAverageAge(users) {
-                // Подробно выводим каждый шаг вычисления
+                // Просто суммируем все возрасты в цикле
                 let sum = 0;
-                let details = "Вычисление среднего возраста:\n\n";
+                for (let i = 0; i < users.length; i++) {
+                    sum = sum + users[i].age;
+                }
                 
-                // Показываем имена и возраст каждого пользователя
-                details += "Пользователи:\n";
-                users.forEach(user => {
-                    details += `- ${user.name}: ${user.age} лет\n`;
-                });
-                
-                // Суммируем все возрасты 
-                details += "\nСуммирование возрастов:\n";
-                users.forEach(user => {
-                    sum += user.age;
-                    details += `+ ${user.age}`;
-                });
-                
-                details += ` = ${sum}\n\n`;
-                
-                // Вычисляем среднее
-                const average = sum / users.length;
-                details += `Средний возраст: ${sum} / ${users.length} = ${average}`;
-                
-                // Выводим подробный расчет
-                alert(details);
-                
+                // Делим на количество пользователей
+                let average = sum / users.length;
                 return average;
             }
             
-            getAverageAge(users);
+            let averageAge = getAverageAge(users);
+            
+            alert(`Средний возраст: ${averageAge}`);
         }
     </script>
     </body>
